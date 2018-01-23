@@ -36,6 +36,8 @@ class profile {
      * constructor for this Profile
      *
      * @param string|Uuid $newProfileId id of this Profile or null if a new Profile
+     * @param int $newAge age of the person in this profile
+     * @param datetime $newBirthDate birthdate for the person in this profile
      * @param string $newFullName string containing full name
      * @throws \InvalidArgumentException if data types are not valid
      * @throws \RangeException if data values are out of bounds (e.g., strings too long, negative integers)
@@ -46,6 +48,8 @@ class profile {
     public function __construct($newProfileId, string $newFullName) {
         try {
             $this->setProfileId($newProfileId);
+            $this->setAge($newAge);
+            $this->setBirthDate ($newBirthDate);
             $this->setFullName($newFullName);
         } catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
             //determine what exception type was thrown
@@ -92,5 +96,5 @@ class profile {
     }
 }
 
-$johnSmith = new profile();
-$johnSmith->setFullName(John Smith);
+$johnSmith = new profile("3021aaf9-18a6-4d9d-bd53-5455943d1574", 26, "09/13/1991", "John Smith");
+$johnSmith->setFullName("John Smith");
