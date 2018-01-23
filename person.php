@@ -45,7 +45,7 @@ class profile {
      * @throws \Exception if some other exception occurs
      * @Documentation https://php.net/manual/en/language.oop5.decon.php
      **/
-    public function __construct($newProfileId, string $newFullName) {
+    public function __construct($newProfileId, int $newAge, datetime $newBirthDate, string $newFullName) {
         try {
             $this->setProfileId($newProfileId);
             $this->setAge($newAge);
